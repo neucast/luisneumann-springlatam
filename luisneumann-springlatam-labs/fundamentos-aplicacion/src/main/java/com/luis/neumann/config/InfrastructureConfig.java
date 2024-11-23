@@ -12,7 +12,7 @@ public class InfrastructureConfig {
             dataSource = new MysqlDataSource();
             dataSource.setUrl(getUrl());
             dataSource.setUser("root");
-            dataSource.setPassword("XXX");
+            dataSource.setPassword("rootPswd-1");
             dataSource.setServerTimezone("UTC");
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -21,6 +21,6 @@ public class InfrastructureConfig {
     }
 
     private String getUrl() {
-        return "jdbc:mysql://IP:<puerto>/<database>" + "?allowPublicKeyRetrieval=true&useSSL=false";
+        return "jdbc:mysql://172.17.0.2:3306/springlatam_labs" + "?allowPublicKeyRetrieval=true&useSSL=false";
     }
 }
