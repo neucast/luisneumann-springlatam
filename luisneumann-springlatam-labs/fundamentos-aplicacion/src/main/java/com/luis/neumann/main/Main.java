@@ -11,8 +11,8 @@ public class Main {
         System.out.println("Main - 'fundamentos-aplicacion' - Inicio");
         System.out.println("****************************************");
         AplicacionFactory AplicacionFactory = new AplicacionFactory();
-        com.luis.neumann.factory.AplicacionFactory.createAplicacion();
-        LibroService libroService = com.luis.neumann.factory.AplicacionFactory.getLibroService();
+        //com.luis.neumann.factory.AplicacionFactory.createAplicacion();
+        LibroService libroService = AplicacionFactory.getLibroService();
         System.out.println("");
 
         System.out.println("--------------------");

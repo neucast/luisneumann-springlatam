@@ -7,7 +7,7 @@ import com.luis.neumann.service.LibroService;
 import com.luis.neumann.service.impl.LibroServiceImpl;
 
 public class AplicacionFactory {
-    LibroServiceImpl libroService;
+    LibroService libroService = new LibroServiceImpl();
 
     private static InfrastructureConfig createInfrastructureConfig() {
         return new InfrastructureConfig();
@@ -17,23 +17,27 @@ public class AplicacionFactory {
         return new LibroJdbcRepository();
     }
 
-    private static void createLibroService() {
-        LibroServiceImpl libroService = new LibroServiceImpl();
+    private static LibroService createLibroService() {
+        return new LibroServiceImpl();
     }
 
     public static void createAplicacion() {
         ;
     }
 
-    public static LibroService getLibroService() {
-        return new LibroServiceImpl();
+    public LibroService getLibroService() {
+        return libroService;
+    }
+
+    public void setLibroService(LibroService libroService) {
+        this.libroService = libroService;
     }
 
     public AplicacionFactory() {
         super();
     }
 
-    public AplicacionFactory(LibroServiceImpl libroService) {
+    public AplicacionFactory(LibroService libroService) {
         this.libroService = libroService;
     }
 }
